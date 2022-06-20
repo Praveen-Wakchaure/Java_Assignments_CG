@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
-
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -45,7 +44,7 @@ public class CheckPresenceOfKeywordInResume_DocFormat extends ConvertDocxToTxt {
 				input=row.getCell(0).getStringCellValue().toString();
 				input = input.toLowerCase();
 				System.out.println(input);
-				
+
 				File resume=new File("./resources/resume.txt"); //Creation of File Descriptor for input file
 				String[] words=null;  //Intialize the word Array
 				FileReader fr = new FileReader(resume);  //Creation of File Reader object
@@ -53,6 +52,13 @@ public class CheckPresenceOfKeywordInResume_DocFormat extends ConvertDocxToTxt {
 				//	      Tika tika = new Tika();
 				//	      String extractedText = tika.parseToString(inputFile);
 
+				//			<dependency>
+				//			    <groupId>org.apache.tika</groupId>
+				//			    <artifactId>tika-parsers</artifactId>
+				//			    <version>1.13</version>
+				//			    <scope>test</scope>
+				//			</dependency>
+				
 				BufferedReader br = new BufferedReader(fr); //Creation of BufferedReader object
 				String s;     
 				//		String input="functional"; // Input word to be searched
@@ -90,9 +96,9 @@ public class CheckPresenceOfKeywordInResume_DocFormat extends ConvertDocxToTxt {
 		double inputWordCount = rowCount+1;
 		System.out.println("input word count: "+inputWordCount);
 		System.out.println("Word Match count: "+wordMatchCount);
-		
+
 		double percentageMatch=0d;
-		
+
 		percentageMatch = (wordMatchCount/inputWordCount)*100;
 		System.out.println("Percentage Match: "+percentageMatch+"%");		
 	}
