@@ -68,7 +68,7 @@ public class FindingMatchesAndMismatchesCSVFile {
 				String result = String.valueOf(a-b);
 
 				if((a-b)==0) {
-					array3.add("NA");
+					array3.add("-");
 				}
 				else {
 					array3.add(result);
@@ -77,7 +77,7 @@ public class FindingMatchesAndMismatchesCSVFile {
 			else {
 				String difference =StringUtils.difference(array1.get(i),array2.get(i));
 				if(difference.isEmpty()) {
-					array3.add("NA");
+					array3.add("-");
 				}
 				else {
 					array3.add(StringUtils.difference(array1.get(i),array2.get(i)));
